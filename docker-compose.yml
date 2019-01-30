@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+  backend:
+    image: microsoft/dotnet:2.2-aspnetcore-runtime
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 8080:5001
+    command: bash -c "echo 'hello-world back-end'"
+  frontend:
+    image: node:10.15.0
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+    command: bash -c "cd /frontend && npm i && npm start"
