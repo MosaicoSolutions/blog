@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosaicoSolutions.Blog.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosaicoSolutions.Blog.Application", "src\MosaicoSolutions.Blog.Application\MosaicoSolutions.Blog.Application.csproj", "{5A7CC3CE-B44A-4104-ACE2-50EEB0FC838D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosaicoSolutions.Blog.Domain.Core", "src\MosaicoSolutions.Blog.Domain.Core\MosaicoSolutions.Blog.Domain.Core.csproj", "{C661315B-F7ED-43A5-9A8F-9D6546286C32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,18 @@ Global
 		{5A7CC3CE-B44A-4104-ACE2-50EEB0FC838D}.Release|x64.Build.0 = Release|Any CPU
 		{5A7CC3CE-B44A-4104-ACE2-50EEB0FC838D}.Release|x86.ActiveCfg = Release|Any CPU
 		{5A7CC3CE-B44A-4104-ACE2-50EEB0FC838D}.Release|x86.Build.0 = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|x64.Build.0 = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Debug|x86.Build.0 = Debug|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|x64.ActiveCfg = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|x64.Build.0 = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|x86.ActiveCfg = Release|Any CPU
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3042F2AD-B73D-4CA5-9A5A-76306C173AAD} = {3D5F166D-30D5-4F0F-929B-F6C910B5357F}
@@ -95,5 +109,6 @@ Global
 		{DA4E10AF-783C-4E75-B88A-495BBF8BEAF9} = {3D5F166D-30D5-4F0F-929B-F6C910B5357F}
 		{80A36AE2-9264-4DD4-9B44-D945D6957B7F} = {3D5F166D-30D5-4F0F-929B-F6C910B5357F}
 		{5A7CC3CE-B44A-4104-ACE2-50EEB0FC838D} = {3D5F166D-30D5-4F0F-929B-F6C910B5357F}
+		{C661315B-F7ED-43A5-9A8F-9D6546286C32} = {3D5F166D-30D5-4F0F-929B-F6C910B5357F}
 	EndGlobalSection
 EndGlobal
