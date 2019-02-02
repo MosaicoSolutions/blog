@@ -9,4 +9,9 @@
     <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MosaicoSolutions.Blog.Domain.Core\MosaicoSolutions.Blog.Domain.Core.csproj" />
+    <ProjectReference Include="..\MosaicoSolutions.Blog.Domain\MosaicoSolutions.Blog.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

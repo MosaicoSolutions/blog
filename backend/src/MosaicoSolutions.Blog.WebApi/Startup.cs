@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MosaicoSolutions.Blog.Application.Validations;
 using MosaicoSolutions.Blog.Infra.CrossCutting.IoC;
 using MosaicoSolutions.Blog.Infra.Data.Contexts.Options;
 
@@ -27,11 +29,14 @@ namespace MosaicoSolutions.Blog.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                    .AddFluentValidation();
 
             services.Configure<BlogContextOptions>(Configuration.GetSection(nameof(BlogContextOptions)));
 
-            services.AddMongoDB(Configuration.GetSection(nameof(BlogContextOptions)).Get<BlogContextOptions>());
+            services.RegisterServices();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

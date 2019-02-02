@@ -5,7 +5,7 @@ namespace MosaicoSolutions.Blog.Domain.Core.Models
     public interface IPage<TRentity> where TRentity : class
     {
         IEnumerable<TRentity> Data { get; }
-        int RecordsTotal { get; }
-        int RecordsFiltered { get; }
+        long RecordsTotal { get; }
+        long RecordsFiltered { get; }
     }
 }
