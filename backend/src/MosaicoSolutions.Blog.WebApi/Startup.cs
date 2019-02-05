@@ -1,12 +1,17 @@
-﻿using FluentValidation.AspNetCore;
+﻿using AutoMapper;
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MosaicoSolutions.Blog.Application.Validations;
+using Microsoft.Extensions.FileProviders;
+using MosaicoSolutions.Blog.Application;
 using MosaicoSolutions.Blog.Infra.CrossCutting.IoC;
 using MosaicoSolutions.Blog.Infra.Data.Contexts.Options;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MosaicoSolutions.Blog.WebApi
 {
@@ -31,12 +36,18 @@ namespace MosaicoSolutions.Blog.WebApi
         {
             services.AddMvc()
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                    .AddFluentValidation();
+                    .AddJsonOptions(options => options.SerializerSettings.Formatting = Formatting.Indented)
+                    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ApplicationAssembly>());
 
             services.Configure<BlogContextOptions>(Configuration.GetSection(nameof(BlogContextOptions)));
 
-            services.RegisterServices();
+            services.RegisterNativeServices();
+
             services.AddCors();
+
+            services.AddAutoMapper(typeof(ApplicationAssembly));
+
+            services.AddMediatR(typeof(ApplicationAssembly));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +65,12 @@ namespace MosaicoSolutions.Blog.WebApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "posts")),
+                RequestPath = "/posts"
+            });
         }
     }
 }

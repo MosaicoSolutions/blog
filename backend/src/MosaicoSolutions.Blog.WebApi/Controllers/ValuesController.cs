@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using MosaicoSolutions.Blog.Domain.Models;
 using MosaicoSolutions.Blog.Infra.Data.Contexts;
 using MosaicoSolutions.Blog.Infra.Data.Contexts.Options;
 
@@ -13,9 +15,24 @@ namespace MosaicoSolutions.Blog.WebApi.Controllers
     [ApiController]
     public class ValuesController : BlogApiController
     {
-        public ValuesController(BlogContext context)
+        public ValuesController(BlogContext context, IMediator mediator): base(mediator)
         {
             var contextLocal = context;
+
+            //var collection = context.GetCollection<Post>();
+
+            //collection.InsertOne(new Post
+            //{
+            //    Title = "Primeiro Post",
+            //    Body = "Isto é apenas um Texto",
+            //    Category = "Teste",
+            //    Image = "photo-1524721696987-b9527df9e512.jpg",
+            //    Tags = new []
+            //    {
+            //        "TestandoApp",
+            //        "PrimeiroPost"
+            //    }
+            //});
         }
 
         // GET api/values

@@ -2,9 +2,9 @@
 
 namespace MosaicoSolutions.Blog.Domain.Core.Models
 {
-    public interface IPage<TRentity> where TRentity : class
+    public interface IPage<TEntity> where TEntity : class
     {
-        IEnumerable<TRentity> Data { get; }
+        IEnumerable<TEntity> Data { get; }
         long RecordsTotal { get; }
         long RecordsFiltered { get; }
     }

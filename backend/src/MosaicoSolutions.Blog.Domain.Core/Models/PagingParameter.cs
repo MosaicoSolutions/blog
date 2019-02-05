@@ -11,6 +11,5 @@ namespace MosaicoSolutions.Blog.Domain.Core.Models
         public Expression<Func<TEntity, bool>> Filter { get; set; }
         public Expression<Func<TEntity, object>> OrderBy { get; set; }
         public SortDirection Sort { get; set; }
-        public TEntity Parameters { get; set; }
     }
 }

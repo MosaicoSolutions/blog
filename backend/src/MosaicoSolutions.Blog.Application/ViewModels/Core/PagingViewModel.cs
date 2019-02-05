@@ -1,4 +1,5 @@
-﻿using MosaicoSolutions.Blog.Domain.Core;
+﻿using MongoDB.Driver;
+using MosaicoSolutions.Blog.Domain.Core;
 
 namespace MosaicoSolutions.Blog.Application.ViewModels.Core
 {
@@ -6,6 +7,8 @@ namespace MosaicoSolutions.Blog.Application.ViewModels.Core
     {
         public int? Page { get; set; }
         public int? PageSize { get; set; }
+        public string OrderBy { get; set; }
+        public SortDirection Sort { get; set; }
         public TEntity Parameters { get; set; }
     }
 }
